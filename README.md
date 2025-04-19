@@ -79,7 +79,7 @@ simple-anotation-extension/
 ## 🚀 Próximos Passos
 
 - [ ] Adicionar **autosave** pra salvar anotações automaticamente
-- [ ] Incluir opção pra **exportar como .txt**
+- [x] Incluir opção pra **exportar como .txt**
 - [ ] Publicar na **Chrome Web Store**
 
 ---
