@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Anotações Rápidas",
+    "version": "1.0",
+    "description": "Um bloco de notas rápido para salvar anotações direto no navegador.",
+    "permissions": ["storage"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "128": "icon.png"
+    }
+  }
