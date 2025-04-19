@@ -47,4 +47,27 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       console.error('Botão Limpar não encontrado!');
     }
+
+    const exportButton = document.getElementById('export');
+    if (exportButton) {
+      exportButton.addEventListener('click', () => {
+        console.log('Botão Exportar clicado!');
+        chrome.storage.local.get('notes', (data) => {
+          if (data.notes) {
+            const blob = new Blob([data.notes], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'anotacoes.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            console.log('Anotações exportadas com sucesso!');
+          } else {
+            console.log('Nenhuma anotação encontrada para exportar.');
+          }
+        });
+      });
+    } 
   });
